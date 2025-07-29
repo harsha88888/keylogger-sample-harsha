@@ -1,0 +1,9 @@
+pynput
+pyautogui
+sounddevice
+scipy
+pyaudio
+psutil
+pyperclip
+requests
+cryptography
