@@ -37,6 +37,7 @@ Install them using:
 pip install -r requirements.txt
 ▶️ How to Run
 (use python name of file.py)
+windows+r and change to its respective directory and start running.
 ⚠️ Only run on your own system in a controlled or test environment. Do not run on others' devices without consent.
 
 ✅ Clone or Download the repository:
@@ -55,6 +56,56 @@ EMAIL_PASSWORD = "your_password_or_app_password"
 ✅ Start the program:
 
 python main.py
+
+#to stop 🔴 If you ran it from Terminal / Command Prompt:
+✅ Windows:
+Press Ctrl + C in the terminal window where the script is running.
+
+This stops the process.
+
+Or run this in a new Command Prompt:
+
+c
+Copy
+Edit
+tasklist | findstr python
+Then:
+
+cmd
+Copy
+Edit
+taskkill /F /IM python.exe
+✅ Linux / Mac:
+In terminal where the script is running:
+Ctrl + C
+Or:
+ps aux | grep python
+Then:
+kill -9 <PID>
+🧹 If it's running in the background (via persistence or stealth):
+Check for the following and delete:
+
+📁 1. Startup Folder (Windows):
+Open:
+shell:startup
+Delete any .py, .exe, or suspicious file added there.
+🔍 2. Task Scheduler (Windows):
+Open Task Scheduler → Look under "Task Scheduler Library"
+Delete any suspicious tasks
+📄 3. Windows Registry:
+Open regedit
+Navigate to:
+mathematica
+HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Run
+Remove any suspicious value related to your script name.
+🧪 Optional: Check if running silently in the background
+Use this command to identify Python processes:
+cmd
+wmic process where "name like '%python%'" get ProcessId,CommandLine
+Then use:
+cmd
+taskkill /PID <PID> /F
+
 🛑 Legal Disclaimer
 This software is intended only for educational, ethical hacking, and security research purposes. Unauthorized use, distribution, or deployment of this software on devices you do not own or have permission to test on is strictly prohibited and may be punishable under law.
 
