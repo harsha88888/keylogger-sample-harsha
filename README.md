@@ -65,15 +65,8 @@ This stops the process.
 
 Or run this in a new Command Prompt:
 
-c
-Copy
-Edit
 tasklist | findstr python
 Then:
-
-cmd
-Copy
-Edit
 taskkill /F /IM python.exe
 ✅ Linux / Mac:
 In terminal where the script is running:
